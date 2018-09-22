@@ -52,12 +52,22 @@ namespace WpfKit
             => type.GetEvent(eventName, flags) is EventInfo @event && @event.EventHandlerType == handlerType ? @event :
                 null != type.BaseType ? FindEvent(type.BaseType, eventName, handlerType, flags) :
                 null;
+        
+        public static EventInfo FindEvent(Type type, string eventName, BindingFlags flags)
+            => type.GetEvent(eventName, flags) is EventInfo @event ? @event :
+                null != type.BaseType ? FindEvent(type.BaseType, eventName, flags) :
+                null;
 
         public static FieldInfo FindField(Type type, string fieldName, Type fieldType, BindingFlags flags)
             => type.GetField(fieldName, flags) is FieldInfo field && field.FieldType == fieldType ? field :
                 null != type.BaseType ? FindField(type.BaseType, fieldName, fieldType, flags) :
                 null;
 
+        public static FieldInfo FindField(Type type, string fieldName, BindingFlags flags)
+            => type.GetField(fieldName, flags) is FieldInfo field ? field :
+                null != type.BaseType ? FindField(type.BaseType, fieldName, flags) :
+                null;
+        
         public static IEnumerable<MethodInfo> GetVirtualPropertyMethods(Type type)
             => type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly).Where(q => q.IsVirtual)
                 .Where(x => x.Name.StartsWith(GET_PREFIX) || x.Name.StartsWith(SET_PREFIX));

@@ -12,12 +12,19 @@
     <wpf:WpfProperty.DataContext>
         <local:MainWindowViewModel />
     </wpf:WpfProperty.DataContext>
+
+    <wpf:Trigger.EventTrigger>
+        <wpf:EventTrigger
+            EventName="Loaded"
+            Command="{Binding InitializeCommand}"
+            CommandParameter="{x:Null}"/>
+    </wpf:Trigger.EventTrigger>
     
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBox Text="{Binding Text1}" />
             <TextBox Text="{Binding Text2}" />
-            <TextBlock Text="{Binding Text3}" />
+            <TextBox Text="{Binding Text3}" />
             <Button Content="Set Random Value" Command="{Binding SetRandomValueCommand}" />
             <Button Content="Combine!" Command="{Binding CombineCommand}" />
         </StackPanel>
