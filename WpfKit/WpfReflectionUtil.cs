@@ -58,7 +58,7 @@ namespace WpfKit
                 null != type.BaseType ? FindField(type.BaseType, fieldName, fieldType, flags) :
                 null;
 
-        public static IEnumerable<MethodInfo> GetVirtualMethods(Type type)
+        public static IEnumerable<MethodInfo> GetVirtualPropertyMethods(Type type)
             => type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly).Where(q => q.IsVirtual)
                 .Where(x => x.Name.StartsWith(GET_PREFIX) || x.Name.StartsWith(SET_PREFIX));
 
@@ -113,7 +113,7 @@ namespace WpfKit
             }
 
             // virtual メソッドのみ抽出
-            var methods = GetVirtualMethods(type);
+            var methods = GetVirtualPropertyMethods(type);
 
             // 各PropertyのGetter, Setter virtualメソッドをオーバーライド
             foreach (var method in methods)
