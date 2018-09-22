@@ -16,6 +16,12 @@ DataContextへ設定する際には，以下のように専用添付プロパティを利用します．
 - WpfProperty.DataContext 添付プロパティにより引数に受け取ったViewModelオブジェクトを派生し新規型を生成，動的にvirtualプロパティをオーバーロードそれをWindowのデータコンテキストへ設定します．
 - 添付プロパティにてデータコンテキストを設定するとバインディングの入力保管が聞かないため，d:DataContext を用いてデザイン時に利用するViewModelを指定しておきます．
 
+## EventTrigger
+任意のコントロールイベントを用いてコマンドの発火を行うことができます．
+
+![](https://i.imgur.com/sdnNGix.png)
+![](https://i.imgur.com/kvjZwtu.png)
+
 # 追加作成予定
 - 標準的なデザイン(Flat Dessign, Dark, Light)
 - 画面遷移用の機構
