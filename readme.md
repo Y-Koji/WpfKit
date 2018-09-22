@@ -3,6 +3,9 @@
 ## WPF実装を簡易的に行えるようにするツールキット
 
 # 機能一覧
+- INotifyPropertyChanged 自動実装
+- EventTrigger
+
 ## INotifyPropertyChanged 自動実装
 ViewModelクラスは以下のようなvirtual修飾子が付いた自動実装プロパティを宣言することで
 自動的に値設定時にPropertyChangedを発火させることができます．
