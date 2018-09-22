@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WpfKit
+namespace WpfKit.ViewKit
 {
     public class BindingProxy : Freezable
     {

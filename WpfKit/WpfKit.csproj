@@ -44,13 +44,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionCommand.cs" />
-    <Compile Include="BindingProxy.cs" />
-    <Compile Include="EventTrigger.cs" />
-    <Compile Include="Trigger.cs" />
-    <Compile Include="WpfProperty.cs" />
+    <Compile Include="ViewModelKit\ActionCommand.cs" />
+    <Compile Include="ViewKit\BindingProxy.cs" />
+    <Compile Include="ViewKit\EventTrigger.cs" />
+    <Compile Include="ViewKit\Trigger.cs" />
+    <Compile Include="ViewKit\WpfProperty.cs" />
     <Compile Include="WpfReflectionUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

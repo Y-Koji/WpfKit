@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace WpfKit
+namespace WpfKit.ViewModelKit
 {
     public class ActionCommand : ICommand
     {

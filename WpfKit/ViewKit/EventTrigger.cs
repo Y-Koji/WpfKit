@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace WpfKit
+namespace WpfKit.ViewKit
 {
     public class EventTrigger : Freezable
     {
@@ -35,12 +35,6 @@ namespace WpfKit
         {
             get { return (string)GetValue(EventNameProperty); }
             set { SetValue(EventNameProperty, value); }
-        }
-
-        public static List<EventTrigger> triggers { get; } = new List<EventTrigger>();
-        public EventTrigger()
-        {
-            triggers.Add(this);
         }
 
         // Using a DependencyProperty as the backing store for EventName.  This enables animation, styling, binding, etc...

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 
-namespace WpfKit
+namespace WpfKit.ViewKit
 {
     public class WpfProperty
     {

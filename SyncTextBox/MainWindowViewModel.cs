@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows.Input;
-using WpfKit;
+using WpfKit.ViewModelKit;
 
 namespace SyncTextBox
 {
