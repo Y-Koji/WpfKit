@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfKit", "WpfKit\WpfKit.csproj", "{96E86A43-3936-458C-B1D5-6D59AFAF2B5D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{70BF7952-754B-4669-9DCD-86BF580E0D45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncTextBox", "SyncTextBox\SyncTextBox.csproj", "{419B4BFE-889C-4494-AC5C-A3CBD50B2C0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{96E86A43-3936-458C-B1D5-6D59AFAF2B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96E86A43-3936-458C-B1D5-6D59AFAF2B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96E86A43-3936-458C-B1D5-6D59AFAF2B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{419B4BFE-889C-4494-AC5C-A3CBD50B2C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419B4BFE-889C-4494-AC5C-A3CBD50B2C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419B4BFE-889C-4494-AC5C-A3CBD50B2C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419B4BFE-889C-4494-AC5C-A3CBD50B2C0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{419B4BFE-889C-4494-AC5C-A3CBD50B2C0E} = {70BF7952-754B-4669-9DCD-86BF580E0D45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B5689CF-0EBC-483B-80B8-64B95512F6F5}

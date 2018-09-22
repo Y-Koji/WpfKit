@@ -1,0 +1,25 @@
+﻿<Window x:Class="SyncTextBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SyncTextBox"
+        xmlns:wpf="clr-namespace:WpfKit;assembly=WpfKit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" 
+        d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}">
+
+    <wpf:WpfProperty.DataContext>
+        <local:MainWindowViewModel />
+    </wpf:WpfProperty.DataContext>
+    
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBox Text="{Binding Text1}" />
+            <TextBox Text="{Binding Text2}" />
+            <TextBlock Text="{Binding Text3}" />
+            <Button Content="Set Random Value" Command="{Binding SetRandomValueCommand}" />
+            <Button Content="Combine!" Command="{Binding CombineCommand}" />
+        </StackPanel>
+    </Grid>
+</Window>
