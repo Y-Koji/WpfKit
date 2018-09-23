@@ -27,7 +27,7 @@ namespace WpfKit.ViewKit
                 {
                     if (sender is FrameworkElement element)
                     {
-                        element.DataContext = WpfReflectionUtil.WrapInstance(e.NewValue);
+                        element.DataContext = Reflect.WrapInstance(e.NewValue);
                     }
                 }));
 

@@ -21,7 +21,7 @@ namespace WpfKit.ViewKit
         {
             base.OnAttached();
 
-            var @event = WpfReflectionUtil.FindEvent(AssociatedObject.GetType(), EventName, (BindingFlags)0xFF);
+            var @event = Reflect.FindEvent(AssociatedObject.GetType(), EventName, (BindingFlags)0xFF);
             if (null == @event)
             {
                 throw new InvalidOperationException($"{AssociatedObject.ToString()}には{EventName}イベントがありません");

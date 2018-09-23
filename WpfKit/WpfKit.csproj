@@ -60,7 +60,7 @@
     <Compile Include="ViewModelKit\ActionCommand.cs" />
     <Compile Include="ViewKit\BindingProxy.cs" />
     <Compile Include="ViewKit\Element.cs" />
-    <Compile Include="WpfReflectionUtil.cs" />
+    <Compile Include="Reflect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

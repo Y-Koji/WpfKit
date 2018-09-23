@@ -10,7 +10,7 @@ using System.Text;
 
 namespace WpfKit
 {
-    public static class WpfReflectionUtil
+    public static class Reflect
     {
         private static SHA256 SHA { get; }
         private static AssemblyName AssemblyName { get; }
@@ -24,7 +24,7 @@ namespace WpfKit
         public static string SET_PREFIX { get; } = "set_";
         public static string FIELD_PREFIX { get; } = "_";
 
-        static WpfReflectionUtil()
+        static Reflect()
         {
             SHA = SHA256.Create();
             AssemblyName = new AssemblyName { Name = ASSEMBLY_NAME, };
@@ -93,7 +93,7 @@ namespace WpfKit
         {
             // ハンドリング用メソッド
             var handler =
-                typeof(WpfReflectionUtil).GetMethod(
+                typeof(Reflect).GetMethod(
                 nameof(PropertyChangedHandler), (BindingFlags)0xFF);
 
             var obj = HandleProperty(value, handler);
