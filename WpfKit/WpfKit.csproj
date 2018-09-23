@@ -35,6 +35,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,11 +45,21 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Messenger.cs" />
+    <Compile Include="ViewKit\AttachableCollection.cs" />
+    <Compile Include="ViewKit\Command\CommandFactory.cs" />
+    <Compile Include="ViewKit\Command\MessageBoxCommand.cs" />
+    <Compile Include="ViewKit\Command\MessageBoxCommandParameter.cs" />
+    <Compile Include="ViewKit\EventTrigger.cs" />
+    <Compile Include="ViewKit\IAttachableObject.cs" />
+    <Compile Include="ViewKit\InvokeCommandAction.cs" />
+    <Compile Include="ViewKit\Trigger.cs" />
+    <Compile Include="ViewKit\TriggerAction.cs" />
+    <Compile Include="ViewKit\TriggerActionCollection.cs" />
+    <Compile Include="ViewKit\TriggerCollection.cs" />
     <Compile Include="ViewModelKit\ActionCommand.cs" />
     <Compile Include="ViewKit\BindingProxy.cs" />
-    <Compile Include="ViewKit\EventTrigger.cs" />
-    <Compile Include="ViewKit\Trigger.cs" />
-    <Compile Include="ViewKit\WpfProperty.cs" />
+    <Compile Include="ViewKit\Element.cs" />
     <Compile Include="WpfReflectionUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

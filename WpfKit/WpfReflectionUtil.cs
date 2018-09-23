@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Security.Cryptography;
@@ -95,7 +96,27 @@ namespace WpfKit
                 typeof(WpfReflectionUtil).GetMethod(
                 nameof(PropertyChangedHandler), (BindingFlags)0xFF);
 
-            return HandleProperty(value, handler);
+            var obj = HandleProperty(value, handler);
+
+            CopyProperties(value, obj);
+
+            return obj;
+        }
+
+        public static void CopyProperties(object src, object target)
+        {
+            if (!src.GetType().IsAssignableFrom(target.GetType()))
+            {
+                throw new InvalidOperationException("プロパティのコピー元とコピー先オブジェクトの型に相違があります．");
+            }
+
+            foreach (var prop in src.GetType().GetProperties())
+            {
+                if (null != prop.GetSetMethod())
+                {
+                    prop.SetValue(target, prop.GetValue(src));
+                }
+            }
         }
 
         public static object HandleProperty(object value, MethodInfo handler)
