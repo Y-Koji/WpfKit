@@ -5,25 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SyncTextBox"
         xmlns:wpf="clr-namespace:WpfKit;assembly=WpfKit"
-        xmlns:view="clr-namespace:WpfKit.ViewKit;assembly=WpfKit"
+        xmlns:kit="clr-namespace:WpfKit.ViewKit;assembly=WpfKit"
         xmlns:cmd="clr-namespace:WpfKit.ViewKit.Command;assembly=WpfKit"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" 
         d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}">
 
-    <view:Element.DataContext>
-        <local:MainWindowViewModel>
-            <local:MainWindowViewModel.Messenger>
-                <wpf:Messenger />
-            </local:MainWindowViewModel.Messenger>
-        </local:MainWindowViewModel>
-    </view:Element.DataContext>
-
-    <view:Element.Triggers>
-        <view:EventTrigger EventName="MouseDown" >
-            <view:InvokeCommand Command="{Binding InitializeCommand}" CommandParameter="{Binding Text1}" />
-        </view:EventTrigger>
-    </view:Element.Triggers>
+    <Window.Resources>
+        <kit:BindingProxy x:Key="Proxy" Data="{Binding}" />
+        <wpf:Messenger x:Key="Messenger" />
+    </Window.Resources>
+    
+    <kit:Element.DataContext>
+        <local:MainWindowViewModel Messenger="{StaticResource Messenger}" />
+    </kit:Element.DataContext>
+    
+    <kit:Element.Triggers>
+        <kit:EventTrigger EventName="MouseDown" >
+            <kit:InvokeCommandAction Command="{Binding InitializeCommand}" CommandParameter="{Binding Text1}" />
+        </kit:EventTrigger>
+        
+        <kit:MessageTrigger Messenger="{StaticResource Messenger}">
+            <kit:MessageBoxAction MessageKey="Sample" />
+        </kit:MessageTrigger>
+    </kit:Element.Triggers>
     
     <Grid>
         <StackPanel Orientation="Vertical">
@@ -32,22 +37,7 @@
             <TextBox Text="{Binding Text3}" />
             <Button Content="Set Random Value" Command="{Binding SetRandomValueCommand}" />
             <Button Content="Combine!" Command="{Binding CombineCommand}" />
-            <Button Content="MsgBox" 
-                    Command="{x:Static cmd:CommandFactory.MessageBoxCommand}">
-                <Button.CommandParameter>
-                    <cmd:MessageBoxCommandParameter 
-                        Message="{Binding Text3}" Caption="Sample" Button="OKCancel"
-                        OkCommand="{x:Static cmd:CommandFactory.MessageBoxCommand}"
-                        CancelCommand="{x:Static cmd:CommandFactory.MessageBoxCommand}">
-                        <cmd:MessageBoxCommandParameter.OkCommandParameter>
-                            <cmd:MessageBoxCommandParameter Button="OK" Message="{Binding Text1}" />
-                        </cmd:MessageBoxCommandParameter.OkCommandParameter>
-                        <cmd:MessageBoxCommandParameter.CancelCommandParameter>
-                            <cmd:MessageBoxCommandParameter Button="OK" Message="{Binding Text2}" />
-                        </cmd:MessageBoxCommandParameter.CancelCommandParameter>
-                    </cmd:MessageBoxCommandParameter>
-                </Button.CommandParameter>
-            </Button>
+            <Button Content="MsgBox" />
         </StackPanel>
     </Grid>
 </Window>

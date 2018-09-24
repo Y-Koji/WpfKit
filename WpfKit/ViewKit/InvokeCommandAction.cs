@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace WpfKit.ViewKit
 {
-    public class InvokeCommand : TriggerAction
+    public class InvokeCommandAction : TriggerAction
     {
         protected override void OnAttached()
         {
@@ -35,7 +35,7 @@ namespace WpfKit.ViewKit
 
         // Using a DependencyProperty as the backing store for Command.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CommandProperty =
-            DependencyProperty.Register("Command", typeof(ICommand), typeof(InvokeCommand), new PropertyMetadata(null));
+            DependencyProperty.Register("Command", typeof(ICommand), typeof(InvokeCommandAction), new PropertyMetadata(null));
         
         public object CommandParameter
         {
@@ -45,6 +45,6 @@ namespace WpfKit.ViewKit
 
         // Using a DependencyProperty as the backing store for CommandParameter.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CommandParameterProperty =
-            DependencyProperty.Register("CommandParameter", typeof(object), typeof(InvokeCommand), new PropertyMetadata(null));
+            DependencyProperty.Register("CommandParameter", typeof(object), typeof(InvokeCommandAction), new PropertyMetadata(null));
     }
 }

@@ -16,8 +16,7 @@ namespace WpfKit.ViewKit
         {
             base.SetValue(ActionsPropertyKey, new TriggerActionCollection());
         }
-
-        // Token: 0x04000015 RID: 21
+        
         private static readonly DependencyPropertyKey ActionsPropertyKey =
             DependencyProperty.RegisterReadOnly(
                 "Actions",

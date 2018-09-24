@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 using WpfKit;
+using WpfKit.ViewKit;
 using WpfKit.ViewModelKit;
 
 namespace SyncTextBox
@@ -18,12 +20,19 @@ namespace SyncTextBox
         public ICommand InitializeCommand => new ActionCommand(_ =>
         {
             // Initialize process.
-            this.ToString();
+
         });
 
         public ICommand CombineCommand => new ActionCommand(_ =>
         {
             // Combine command rised process.
+            Messenger.Raise(new MessageBoxMessage("Sample")
+            {
+                Message = "Hello, World!",
+                Caption = "Test",
+                Button = MessageBoxButton.OKCancel,
+                Image = MessageBoxImage.Error,
+            });
         });
 
         public ICommand SetRandomValueCommand => new ActionCommand(_ =>
