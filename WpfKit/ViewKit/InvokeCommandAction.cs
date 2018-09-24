@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace WpfKit.ViewKit
 {
-    public class InvokeCommandAction : TriggerAction
+    public class InvokeCommandAction : EventTriggerAction
     {
         protected override void OnAttached()
         {

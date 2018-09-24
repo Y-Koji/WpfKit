@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace WpfKit.ViewKit
 {
-    public class TriggerActionCollection : AttachableCollection<TriggerAction>
+    public class EventTriggerActionCollection : AttachableCollection<EventTriggerAction>
     {
         protected override void OnAttached()
         {
@@ -25,7 +24,7 @@ namespace WpfKit.ViewKit
             }
         }
 
-        protected override void OnItemAdded(TriggerAction item)
+        protected override void OnItemAdded(EventTriggerAction item)
         {
             if (base.AssociatedObject != null)
             {
@@ -33,7 +32,7 @@ namespace WpfKit.ViewKit
             }
         }
 
-        protected override void OnItemRemoved(TriggerAction item)
+        protected override void OnItemRemoved(EventTriggerAction item)
         {
             if (((IAttachableObject)item).AssociatedObject != null)
             {

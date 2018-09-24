@@ -51,6 +51,8 @@
     <Compile Include="ViewKit\Command\MessageBoxCommand.cs" />
     <Compile Include="ViewKit\Command\MessageBoxCommandParameter.cs" />
     <Compile Include="ViewKit\EventTrigger.cs" />
+    <Compile Include="ViewKit\EventTriggerAction.cs" />
+    <Compile Include="ViewKit\EventTriggerActionCollection.cs" />
     <Compile Include="ViewKit\IAttachableObject.cs" />
     <Compile Include="ViewKit\InvokeCommandAction.cs" />
     <Compile Include="ViewKit\Message.cs" />
@@ -58,9 +60,9 @@
     <Compile Include="ViewKit\MessageBoxAction.cs" />
     <Compile Include="ViewKit\MessageBoxMessage.cs" />
     <Compile Include="ViewKit\MessageTrigger.cs" />
+    <Compile Include="ViewKit\MessageTriggerActionCollection.cs" />
     <Compile Include="ViewKit\Trigger.cs" />
     <Compile Include="ViewKit\TriggerAction.cs" />
-    <Compile Include="ViewKit\TriggerActionCollection.cs" />
     <Compile Include="ViewKit\TriggerCollection.cs" />
     <Compile Include="ViewModelKit\ActionCommand.cs" />
     <Compile Include="ViewKit\BindingProxy.cs" />

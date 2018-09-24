@@ -24,9 +24,9 @@
         <kit:EventTrigger EventName="MouseDown" >
             <kit:InvokeCommandAction Command="{Binding InitializeCommand}" CommandParameter="{Binding Text1}" />
         </kit:EventTrigger>
-        
+
         <kit:MessageTrigger Messenger="{StaticResource Messenger}">
-            <kit:MessageBoxAction MessageKey="Sample" />
+            <kit:MessageBoxAction />
         </kit:MessageTrigger>
     </kit:Element.Triggers>
     
@@ -37,7 +37,6 @@
             <TextBox Text="{Binding Text3}" />
             <Button Content="Set Random Value" Command="{Binding SetRandomValueCommand}" />
             <Button Content="Combine!" Command="{Binding CombineCommand}" />
-            <Button Content="MsgBox" />
         </StackPanel>
     </Grid>
 </Window>

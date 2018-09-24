@@ -14,41 +14,7 @@ namespace WpfKit.ViewKit
     {
         public Trigger()
         {
-            base.SetValue(ActionsPropertyKey, new TriggerActionCollection());
         }
-        
-        private static readonly DependencyPropertyKey ActionsPropertyKey =
-            DependencyProperty.RegisterReadOnly(
-                "Actions",
-                typeof(TriggerActionCollection),
-                typeof(Trigger),
-                new FrameworkPropertyMetadata((sender, e) =>
-                {
-                    TriggerActionCollection triggerActionCollection = e.OldValue as TriggerActionCollection;
-                    TriggerActionCollection triggerActionCollection2 = e.NewValue as TriggerActionCollection;
-                    if (triggerActionCollection != triggerActionCollection2)
-                    {
-                        if (triggerActionCollection != null && ((IAttachableObject)triggerActionCollection).AssociatedObject != null)
-                        {
-                            triggerActionCollection.Detach();
-                        }
-                        if (triggerActionCollection2 != null && sender != null)
-                        {
-                            if (((IAttachableObject)triggerActionCollection2).AssociatedObject != null)
-                            {
-                                throw new InvalidOperationException("CannotHostTriggerActionCollectionMultipleTimesExceptionMessage");
-                            }
-                        }
-                    }
-                }));
-
-        public TriggerActionCollection Actions
-        {
-            get { return (TriggerActionCollection)GetValue(ActionsProperty); }
-        }
-
-        // Using a DependencyProperty as the backing store for Methods.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ActionsProperty = ActionsPropertyKey.DependencyProperty;
 
         public DependencyObject AssociatedObject { get; private set; }
 
@@ -64,7 +30,6 @@ namespace WpfKit.ViewKit
                 WritePreamble();
                 AssociatedObject = dependencyObject;
                 WritePostscript();
-                Actions.Attach(AssociatedObject);
                 OnAttached();
             }
         }

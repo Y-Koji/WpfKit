@@ -13,6 +13,7 @@ namespace WpfKit.ViewKit
         public string Caption { get; set; }
         public MessageBoxButton Button { get; set; }
         public MessageBoxImage Image { get; set; }
+        public MessageBoxResult Response { get; set; }
 
         public MessageBoxMessage(string messageKey) : base(messageKey)
         {

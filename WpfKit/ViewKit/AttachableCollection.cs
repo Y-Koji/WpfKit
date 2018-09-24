@@ -23,7 +23,6 @@ namespace WpfKit.ViewKit
                     foreach (var item in e.NewItems)
                     {
                         OnItemAdded((T)item);
-                        var self = this;
                     }
                     return;
 

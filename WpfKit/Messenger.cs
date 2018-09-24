@@ -11,9 +11,11 @@ namespace WpfKit
     {
         public event Action<Message> OnMessage;
 
-        public void Raise(Message message)
+        public Message Raise(Message message) 
         {
             OnMessage?.Invoke(message);
+
+            return message;
         }
     }
 }

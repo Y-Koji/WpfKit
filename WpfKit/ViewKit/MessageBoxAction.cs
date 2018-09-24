@@ -7,20 +7,13 @@ using System.Windows;
 
 namespace WpfKit.ViewKit
 {
-    public class MessageBoxAction : MessageAction<MessageBoxMessage>
+    public class MessageBoxAction : MessageAction
     {
         public override void Invoke(object parameter)
         {
-            base.Invoke(parameter);
+            MessageBoxMessage msg = (MessageBoxMessage)parameter;
 
-            if (parameter is MessageBoxMessage message)
-            {
-                MessageBox.Show(message.Message, message.Caption, message.Button, message.Image);
-            }
-            else
-            {
-                throw new InvalidOperationException("MessageBoxActionにMessageBoxMessage以外のパラメタを与えることはできません");
-            }
+            msg.Response = MessageBox.Show(msg.Message, msg.Caption, msg.Button, msg.Image);
         }
     }
 }
