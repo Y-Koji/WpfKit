@@ -26,7 +26,10 @@ namespace WpfKit.ViewKit
             {
                 foreach (var action in Actions)
                 {
-                    action.Invoke(message);
+                    if (action.MessageKey == message.MessageKey)
+                    {
+                        action.Invoke(message);
+                    }
                 }
             };
         }
