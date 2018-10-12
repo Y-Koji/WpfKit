@@ -26,4 +26,24 @@ namespace WpfKit.ViewModelKit
         public void Execute(object parameter)
             => _execute?.Invoke(parameter);
     }
+
+    public class ActionCommand<T> : ICommand
+    {
+        private Func<object, bool> _canExecute = null;
+        private Action<T> _execute = null;
+
+        public ActionCommand(Action<T> execute, Func<object, bool> canExecute = null)
+        {
+            _execute = execute;
+            _canExecute = canExecute;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+            => _canExecute?.Invoke(parameter) ?? true;
+
+        public void Execute(object parameter)
+            => _execute?.Invoke((T)parameter);
+    }
 }
