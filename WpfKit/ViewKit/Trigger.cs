@@ -9,7 +9,6 @@ using System.Windows.Media.Animation;
 
 namespace WpfKit.ViewKit
 {
-    [ContentProperty("Actions")]
     public abstract class Trigger : Animatable, IAttachableObject
     {
         public Trigger()
