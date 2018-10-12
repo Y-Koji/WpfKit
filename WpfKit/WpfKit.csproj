@@ -61,6 +61,8 @@
     <Compile Include="ViewKit\MessageBoxMessage.cs" />
     <Compile Include="ViewKit\MessageTrigger.cs" />
     <Compile Include="ViewKit\MessageTriggerActionCollection.cs" />
+    <Compile Include="ViewKit\ModalWindowAction.cs" />
+    <Compile Include="ViewKit\ModalWindowMessage.cs" />
     <Compile Include="ViewKit\Trigger.cs" />
     <Compile Include="ViewKit\TriggerAction.cs" />
     <Compile Include="ViewKit\TriggerCollection.cs" />
